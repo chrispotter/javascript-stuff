@@ -1,0 +1,22 @@
+function ProductMapColor(color) {
+    this.red = this.green = this.blue = 0;
+    this.alpha = 1;
+    if (typeof color == 'undefined') {
+        color = {};
+    }
+    if (!color.r) {
+        this.red = Math.floor(Math.random() * 256);
+    }
+    if (!color.g) {
+        this.green = Math.floor(Math.random() * 256);
+    }
+    if (!color.b) {
+        this.blue = Math.floor(Math.random() * 256);
+    }
+    if (!color.a) {
+        this.alpha = Math.random();
+    }
+}
+ProductMapColor.prototype.print = function () {
+    return 'rgba(' + this.red + ',' + this.green + ',' + this.blue + ', ' + this.alpha + ')';
+}
